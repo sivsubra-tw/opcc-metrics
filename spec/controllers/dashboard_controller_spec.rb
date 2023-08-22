@@ -8,4 +8,9 @@ RSpec.describe DashboardController, type: :controller do
     get :index
     expect(assigns(:backlog)).to eq(3)
   end
+
+  it "renders the index template" do
+    get :index
+    expect(response).to render_template("index")
+  end
 end
