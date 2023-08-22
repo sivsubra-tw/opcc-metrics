@@ -3,7 +3,13 @@
     <div class="grid_item first">
       <div class="card_title">Maintenance Backlog</div>
       <div class="card_body">
-        <span class="data_item">20</span>
+        <span class="data_item">
+          <% if @backlog %>
+            <%= @backlog %>
+          <% else %>
+            nil
+          <% end %>
+        </span>
         <p class="data_description">cards in backlog</p>
       </div>
     </div>
