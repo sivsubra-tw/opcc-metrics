@@ -1,5 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe "dashboard/index.html.erb", type: :view do
-  pending "add some examples to (or delete) #{__FILE__}"
+RSpec.describe 'dashboard/index.html.erb', type: :view do
+  it 'displays the number of cards in the Maintenance Backlog list' do
+    render
+    assert_select '.data_item', '20'
+  end
 end
