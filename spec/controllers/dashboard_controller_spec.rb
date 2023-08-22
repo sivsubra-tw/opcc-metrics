@@ -3,11 +3,9 @@ require "rails_helper"
 
 
 RSpec.describe DashboardController, type: :controller do
-  let(:maintenance_backlog) { class_double(MaintenanceBacklog) }
-  before { allow(maintenance_backlog).to receive(:number_of_cards).and_return(1)}
-
-  it 'should have the number of cards in the maintenance backlog' do
+  it "assigns @backlog" do
+    allow(MaintenanceBacklog).to receive(:number_of_cards).and_return(3)
     get :index
-    expect(maintenance_backlog).to have_received(:number_of_cards)
+    expect(assigns(:backlog)).to eq(3)
   end
 end
